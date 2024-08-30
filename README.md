@@ -65,10 +65,14 @@ Detailed Logging: Use the -dl option for more detailed output that can help with
 
 ## Example Workflow
 1. Run the Bash Script to Collect Cluster Data
-```./crawl_clusters.sh -dl```
-2. Run the Python Script to generate reports
-```python3 generate_ingress_reports.py -dl```
-3. View the generated Reports in the results directory
+```
+./crawl_clusters.sh -dl
+```
+3. Run the Python Script to generate reports
+```
+python3 generate_ingress_reports.py -dl
+```
+5. View the generated Reports in the results directory
 
 ## Script Details
 ### Bash Script (crawl_clusters.sh)
@@ -78,5 +82,5 @@ Detailed Logging: Use the -dl option for more detailed output that can help with
 
 ### Python Script (generate_ingress_reports.py)
 - Purpose: Processes the collected data and generates Markdown reports summarizing the Ingress configurations for each cluster.
-- Logging: Provides detailed logs when run with the -dl option.
+- Logging: Provides detailed logs when run with the ```-dl``` option.
 - Outputs: Generates Markdown files in the results directory.
