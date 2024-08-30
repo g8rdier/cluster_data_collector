@@ -13,14 +13,14 @@ Before running the scripts, ensure that the following tools are installed on you
 
 
 ## Usage Instructions
-# Step 1: Clone the Repository
+### Step 1: Clone the Repository
 Clone the repository to your local machine:
 ```
 git clone https://github.com/your-repo/cluster-data-collector.git
 cd cluster-data-collector
 ```
 
-# Step 2: Run the Bash Script
+### Step 2: Run the Bash Script
 The script crawl_clusters.sh collects data from the Kubernetes clusters specified in the script. It switches contexts to each cluster, retrieves the required information, and stores it in the info_cache_ directory.
 
 *First Run of the Script*
@@ -37,23 +37,22 @@ In subsequent runs, the script will use cached data unless FORCE_REBUILD is manu
 ```
 Note: The script automatically toggles the FORCE_REBUILD variable depending on whether it has been run before. The script creates a marker file (cluster_crawler_marker) after a successful run, which is used to determine whether the cache should be rebuilt on the next run.
 
-# Step 3: Run the Python Script
+### Step 3: Run the Python Script
 After collecting the cluster data, run the Python script to generate Markdown reports:
 ```python3 generate_ingress_reports.py -dl```
 -dl: Enables detailed logging in the Python script.
 This script processes the data stored in the info_cache_ directory and generates Markdown files summarizing the Ingress information for each cluster. The Markdown files are saved in the results directory and are named according to their respective clusters.
 
-# Step 4: View the Markdown Reports
+### Step 4: View the Markdown Reports
 After running the Python script, navigate to the results directory to view the generated Markdown reports. Each file is named after the cluster with a _ingress.md suffix.
 
 Example:
-
-python
-Copy code
+```
 results/
 ├── cluster1_ingress.md
 ├── cluster2_ingress.md
 ...
+```
 
 ## Troubleshooting
 Authentication Issues: Ensure you have the required permissions and credentials to access the Kubernetes clusters.
@@ -68,12 +67,12 @@ Detailed Logging: Use the -dl option for more detailed output that can help with
 3. View the generated Reports in the results directory
 
 ## Script Details
-# Bash Script (crawl_clusters.sh)
+### Bash Script (crawl_clusters.sh)
 - Purpose: Collects data from Kubernetes clusters, including IP addresses, pod details, and Ingress configurations.
 - Logging: Provides detailed logs when run with the -dl option. It also automatically toggles the FORCE_REBUILD variable depending on whether it is the first time the script is run.
 - Outputs: Stores collected data in the info_cache_ directory and creates a marker file after successful completion.
 
-# Python Script (generate_ingress_reports.py)
+### Python Script (generate_ingress_reports.py)
 - Purpose: Processes the collected data and generates Markdown reports summarizing the Ingress configurations for each cluster.
 - Logging: Provides detailed logs when run with the -dl option.
 - Outputs: Generates Markdown files in the results directory.
