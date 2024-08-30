@@ -23,8 +23,7 @@ cd cluster-data-collector
 ### Step 2: Run the Bash Script
 The script ```crawl_clusters.sh``` collects data from the Kubernetes clusters specified in the script. It switches contexts to each cluster, retrieves the required information, and stores it in the ```info_cache_``` directory.
 
-*First Run of the Script*
-Before the first run of the script, log in using cloudctl login (or your cluster access tool).
+*First Run of the Script*: Before the first run of the script, log in using cloudctl login (or your cluster access tool).
 When running the script for the first time, set the environment variable ```FORCE_REBUILD``` to 1 to force the collection of new data from all clusters:
 
 ```
@@ -32,8 +31,7 @@ When running the script for the first time, set the environment variable ```FORC
 ```
 ```-dl```: Enables detailed logging, providing more verbose output for debugging and monitoring purposes.
 
-*Subsequent Runs*
-In subsequent runs, the script will use cached data unless FORCE_REBUILD is manually set to 1. You can run the script without additional arguments:
+*Subsequent Runs*: In subsequent runs, the script will use cached data unless FORCE_REBUILD is manually set to 1. You can run the script without additional arguments:
 ```
 ./crawl_clusters.sh
 ```
