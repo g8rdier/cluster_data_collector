@@ -77,7 +77,7 @@ python3 generate_ingress_reports.py -dl
 ## Script Details
 ### Bash Script (crawl_clusters.sh)
 - Purpose: Collects data from Kubernetes clusters, including IP addresses, pod details, and Ingress configurations.
-- Logging: Provides detailed logs when run with the -dl option. It also automatically toggles the FORCE_REBUILD variable depending on whether it is the first time the script is run.
+- Logging: Provides detailed logs when run with the ```-dl``` option. It also automatically toggles the FORCE_REBUILD variable depending on whether it is the first time the script is run.
 - Outputs: Stores collected data in the info_cache_ directory and creates a marker file after successful completion.
 
 ### Python Script (generate_ingress_reports.py)
