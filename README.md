@@ -27,7 +27,9 @@ The script crawl_clusters.sh collects data from the Kubernetes clusters specifie
 Before the first run of the script, log in using cloudctl login (or your cluster access tool).
 When running the script for the first time, set the environment variable FORCE_REBUILD to 1 to force the collection of new data from all clusters:
 
-```./crawl_clusters.sh -dl```
+```
+./crawl_clusters.sh -dl
+```
 -dl: Enables detailed logging, providing more verbose output for debugging and monitoring purposes.
 
 *Subsequent Runs*
@@ -39,7 +41,9 @@ Note: The script automatically toggles the FORCE_REBUILD variable depending on w
 
 ### Step 3: Run the Python Script
 After collecting the cluster data, run the Python script to generate Markdown reports:
-```python3 generate_ingress_reports.py -dl```
+```
+python3 generate_ingress_reports.py -dl
+```
 -dl: Enables detailed logging in the Python script.
 This script processes the data stored in the info_cache_ directory and generates Markdown files summarizing the Ingress information for each cluster. The Markdown files are saved in the results directory and are named according to their respective clusters.
 
