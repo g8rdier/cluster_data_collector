@@ -1,11 +1,11 @@
-## Cluster Data Collection and Report Generation
+# Cluster Data Collection and Report Generation
 This repository contains a set of scripts designed to collect data from multiple Kubernetes clusters and generate detailed Markdown reports. The process involves two main scripts:
 
 - **Bash Script ('crawl_clusters.sh'):** This script collects data from the specified Kubernetes clusters.
 - **Python Script ('generate_ingress_reports.py'):** This script processes the collected data and generates Markdown files summarizing the Ingress information for each cluster.
 
   
-## Prerequisites
+### Prerequisites
 Before running the scripts, ensure that the following tools are installed on your system:
 - Kubernetes CLI (kubectl): Used to interact with Kubernetes clusters.
 - Cloud CLI (cloudctl): Used to interact with Kubernetes clusters (or any similar tool you use to interact with your clusters).
