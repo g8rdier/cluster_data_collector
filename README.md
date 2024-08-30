@@ -1,14 +1,14 @@
 # Cluster Data Collection and Report Generation
 This repository contains a set of scripts designed to collect data from multiple Kubernetes clusters and generate detailed Markdown reports. The process involves two main scripts:
 
-- **Bash Script ('crawl_clusters.sh'):** This script collects data from the specified Kubernetes clusters.
-- **Python Script ('generate_ingress_reports.py'):** This script processes the collected data and generates Markdown files summarizing the Ingress information for each cluster.
+- **Bash Script (```crawl_clusters.sh```):** This script collects data from the specified Kubernetes clusters.
+- **Python Script (```generate_ingress_reports.py```):** This script processes the collected data and generates Markdown files summarizing the Ingress information for each cluster.
 
   
 ## Prerequisites
 Before running the scripts, ensure that the following tools are installed on your system:
-- Kubernetes CLI (kubectl): Used to interact with Kubernetes clusters.
-- Cloud CLI (cloudctl): Used to interact with Kubernetes clusters (or any similar tool you use to interact with your clusters).
+- Kubernetes CLI (```kubectl```): Used to interact with Kubernetes clusters.
+- Cloud CLI (```cloudctl```): Used to interact with Kubernetes clusters (or any similar tool you use to interact with your clusters).
 - Python 3.x: Required to run the Python script.
 
 
@@ -21,16 +21,16 @@ cd cluster-data-collector
 ```
 
 ### Step 2: Run the Bash Script
-The script crawl_clusters.sh collects data from the Kubernetes clusters specified in the script. It switches contexts to each cluster, retrieves the required information, and stores it in the info_cache_ directory.
+The script ```crawl_clusters.sh``` collects data from the Kubernetes clusters specified in the script. It switches contexts to each cluster, retrieves the required information, and stores it in the ```info_cache_``` directory.
 
 *First Run of the Script*
 Before the first run of the script, log in using cloudctl login (or your cluster access tool).
-When running the script for the first time, set the environment variable FORCE_REBUILD to 1 to force the collection of new data from all clusters:
+When running the script for the first time, set the environment variable ```FORCE_REBUILD``` to 1 to force the collection of new data from all clusters:
 
 ```
 ./crawl_clusters.sh -dl
 ```
--dl: Enables detailed logging, providing more verbose output for debugging and monitoring purposes.
+```-dl```: Enables detailed logging, providing more verbose output for debugging and monitoring purposes.
 
 *Subsequent Runs*
 In subsequent runs, the script will use cached data unless FORCE_REBUILD is manually set to 1. You can run the script without additional arguments:
